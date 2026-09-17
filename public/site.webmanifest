@@ -1,0 +1,17 @@
+{
+  "name": "Ameer Hamza — Full-Stack Web Developer",
+  "short_name": "Ameer Hamza",
+  "description": "Portfolio of Ameer Hamza, a full-stack web developer building fast, modern web applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05060c",
+  "theme_color": "#05060c",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

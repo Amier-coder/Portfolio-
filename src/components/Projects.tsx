@@ -63,14 +63,21 @@ export function Projects() {
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                 className="group glass card-hover relative flex flex-col overflow-hidden rounded-3xl"
               >
-                <div
-                  className={`relative flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br ${project.gradient}`}
-                >
-                  <div className="bg-grid absolute inset-0 opacity-40" />
-                  <span className="relative grid h-16 w-16 place-items-center rounded-2xl bg-base/50 text-white ring-1 ring-inset ring-white/10 backdrop-blur-sm transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
-                    <project.icon size={30} />
-                  </span>
-                  <span className="absolute left-4 top-4 chip bg-base/60">{project.category}</span>
+                <div className="relative h-52 overflow-hidden">
+                  {project.demoImage && (
+                    <img
+                      src={project.demoImage}
+                      alt={`${project.title} demo`}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-base/90 via-base/30 to-transparent" />
+                  <div className="bg-grid absolute inset-0 opacity-30" />
+                  <div className="absolute left-4 top-4 chip bg-base/80">{project.category}</div>
+                  <div className="absolute right-4 top-4 grid h-14 w-14 place-items-center rounded-2xl bg-base/50 text-white ring-1 ring-inset ring-white/10 backdrop-blur-sm transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
+                    <project.icon size={28} />
+                  </div>
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">

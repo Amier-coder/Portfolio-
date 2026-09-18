@@ -23,6 +23,7 @@ import {
   FiBriefcase,
   FiCode,
   FiCoffee,
+  FiCreditCard,
   FiFilm,
   FiLayers,
   FiLayout,
@@ -189,6 +190,7 @@ export type Project = {
   repo: string;
   live?: string;
   icon: IconType;
+  demoImage?: string;
   gradient: string;
 };
 
@@ -202,6 +204,7 @@ export const projects: Project[] = [
     tags: ["JavaScript", "React", "REST API"],
     repo: "https://github.com/Amier-coder/eShop",
     icon: FiShoppingBag,
+    demoImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop",
     gradient: "from-violet-500/30 via-fuchsia-500/10 to-transparent",
   },
   {
@@ -213,6 +216,7 @@ export const projects: Project[] = [
     tags: ["JavaScript", "CSS3", "Responsive"],
     repo: "https://github.com/Amier-coder/Myshop",
     icon: FiShoppingCart,
+    demoImage: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&h=500&fit=crop",
     gradient: "from-cyan-500/30 via-sky-500/10 to-transparent",
   },
   {
@@ -224,6 +228,7 @@ export const projects: Project[] = [
     tags: ["JavaScript", "API", "UI"],
     repo: "https://github.com/Amier-coder/movie-site",
     icon: FiFilm,
+    demoImage: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&h=500&fit=crop",
     gradient: "from-rose-500/30 via-orange-500/10 to-transparent",
   },
   {
@@ -235,6 +240,7 @@ export const projects: Project[] = [
     tags: ["HTML5", "CSS3", "Responsive"],
     repo: "https://github.com/Amier-coder/restuarant-site",
     icon: FiCoffee,
+    demoImage: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=500&fit=crop",
     gradient: "from-amber-500/30 via-yellow-500/10 to-transparent",
   },
   {
@@ -246,6 +252,7 @@ export const projects: Project[] = [
     tags: ["JavaScript", "HTML5", "Media"],
     repo: "https://github.com/Amier-coder/Custom_video_player",
     icon: FiPlayCircle,
+    demoImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=500&fit=crop",
     gradient: "from-emerald-500/30 via-teal-500/10 to-transparent",
   },
   {
@@ -257,6 +264,7 @@ export const projects: Project[] = [
     tags: ["JavaScript", "Game Logic", "CSS3"],
     repo: "https://github.com/Amier-coder/tic-tac-toe",
     icon: FaGamepad,
+    demoImage: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=500&fit=crop",
     gradient: "from-indigo-500/30 via-blue-500/10 to-transparent",
   },
   {
@@ -268,6 +276,7 @@ export const projects: Project[] = [
     tags: ["HTML5", "CSS3", "Forms"],
     repo: "https://github.com/Amier-coder/login-form",
     icon: FiLock,
+    demoImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=500&fit=crop",
     gradient: "from-purple-500/30 via-violet-500/10 to-transparent",
   },
   {
@@ -279,7 +288,32 @@ export const projects: Project[] = [
     tags: ["HTML5", "CSS3", "Landing Page"],
     repo: "https://github.com/Amier-coder/company-demo",
     icon: FiBriefcase,
+    demoImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=500&fit=crop",
     gradient: "from-slate-400/30 via-slate-500/10 to-transparent",
+  },
+  {
+    id: "erp-system",
+    title: "ERP System",
+    description:
+      "A comprehensive Enterprise Resource Planning system with inventory management, procurement, sales, finance, HR, and reporting modules. Built with role-based access control, real-time dashboards, and multi-company support.",
+    category: "Web App",
+    tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Redux", "Tailwind CSS"],
+    repo: "https://github.com/Amier-coder/erp-system",
+    icon: FiLayers,
+    demoImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+    gradient: "from-blue-500/30 via-indigo-500/10 to-transparent",
+  },
+  {
+    id: "pos-system",
+    title: "POS System",
+    description:
+      "A modern Point of Sale system for retail & restaurants with cart management, barcode scanning, payment integration (cash/card/digital), inventory sync, receipt printing, and sales analytics dashboard.",
+    category: "Web App",
+    tags: ["React", "TypeScript", "Node.js", "MongoDB", "Socket.io", "Electron"],
+    repo: "https://github.com/Amier-coder/pos-system",
+    icon: FiCreditCard,
+    demoImage: "https://images.unsplash.com/photo-1556742111-aaaa0a9c8f55?w=800&h=500&fit=crop",
+    gradient: "from-emerald-500/30 via-teal-500/10 to-transparent",
   },
 ];
 

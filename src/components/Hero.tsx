@@ -167,7 +167,7 @@ export function Hero() {
               View My Work
               <FiArrowRight className="transition-transform group-hover:translate-x-1" />
             </a>
-            <a href={profile.resumeUrl} className="btn-ghost group">
+            <a href={profile.resumeUrl} download="Ameer-Hamza-Resume.pdf" className="btn-ghost group">
               <FiDownload className="transition-transform group-hover:translate-y-0.5" />
               Download CV
             </a>

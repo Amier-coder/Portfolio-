@@ -62,13 +62,25 @@ const codeLines: { indent: number; content: ReactNode }[] = [
     indent: 1,
     content: (
       <>
+        <span className="text-slate-400">role:</span>{" "}
+        <span className="text-emerald-300">'Full Stack &amp; Frontend'</span>
+        <span className="text-slate-500">,</span>
+      </>
+    ),
+  },
+  {
+    indent: 1,
+    content: (
+      <>
         <span className="text-slate-400">stack:</span>{" "}
         <span className="text-slate-300">[</span>
         <span className="text-emerald-300">'React'</span>
         <span className="text-slate-500">, </span>
-        <span className="text-emerald-300">'TypeScript'</span>
+        <span className="text-emerald-300">'Next.js'</span>
         <span className="text-slate-500">, </span>
-        <span className="text-emerald-300">'Node'</span>
+        <span className="text-emerald-300">'Laravel'</span>
+        <span className="text-slate-500">, </span>
+        <span className="text-emerald-300">'MySQL'</span>
         <span className="text-slate-300">]</span>
         <span className="text-slate-500">,</span>
       </>
@@ -78,8 +90,8 @@ const codeLines: { indent: number; content: ReactNode }[] = [
     indent: 1,
     content: (
       <>
-        <span className="text-slate-400">focus:</span>{" "}
-        <span className="text-emerald-300">'clean, fast UIs'</span>
+        <span className="text-slate-400">systems:</span>{" "}
+        <span className="text-emerald-300">'ERP &amp; POS Solutions'</span>
         <span className="text-slate-500">,</span>
       </>
     ),
@@ -134,7 +146,7 @@ export function Hero() {
             Hi, I&apos;m{" "}
             <span className="text-gradient text-shadow-glow">{profile.firstName}</span>
             <br />
-            <span className="text-white">I build for the web.</span>
+            <span className="text-white">I build scalable web apps.</span>
           </motion.h1>
 
           <motion.div
@@ -261,7 +273,7 @@ export function Hero() {
             className="glass absolute -right-5 bottom-16 hidden rounded-2xl px-4 py-3 shadow-card sm:block"
           >
             <p className="text-xs text-slate-400">Focus</p>
-            <p className="font-display text-lg font-bold text-white">Clean Code</p>
+            <p className="font-display text-lg font-bold text-white">ERP &amp; POS</p>
           </motion.div>
         </motion.div>
       </div>

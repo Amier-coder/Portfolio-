@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { FiArrowRight, FiExternalLink, FiGithub } from "react-icons/fi";
+import { FiArrowRight, FiExternalLink, FiGithub, FiStar } from "react-icons/fi";
 import { projects, type Category } from "../data/portfolio";
 import { SectionHeading } from "./ui/SectionHeading";
 
-const filters: Category[] = ["All", "Web App", "E-Commerce", "UI / UX", "Game"];
+const filters: Category[] = ["All", "Enterprise", "Web App", "E-Commerce", "UI / UX", "Game"];
 
 export function Projects() {
   const [active, setActive] = useState<Category>("All");
@@ -18,10 +18,10 @@ export function Projects() {
     <section id="projects" className="relative py-24 sm:py-28">
       <div className="container-px">
         <SectionHeading
-          eyebrow="Portfolio"
-          title="Selected"
-          highlight="projects"
-          description="A collection of apps and interfaces I've built — from e-commerce flows to custom media players."
+          eyebrow="Portfolio & Systems"
+          title="Featured"
+          highlight="Projects"
+          description="Enterprise ERP & POS systems, responsive web applications, and dynamic full-stack solutions."
         />
 
         <div className="mt-10 flex flex-wrap justify-center gap-2">
@@ -74,7 +74,16 @@ export function Projects() {
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-base/90 via-base/30 to-transparent" />
                   <div className="bg-grid absolute inset-0 opacity-30" />
-                  <div className="absolute left-4 top-4 chip bg-base/80">{project.category}</div>
+
+                  <div className="absolute left-4 top-4 flex items-center gap-2">
+                    <span className="chip bg-base/80 font-medium">{project.category}</span>
+                    {project.featured && (
+                      <span className="chip border-amber-400/30 bg-amber-400/10 text-amber-300">
+                        <FiStar className="mr-1 text-xs" /> Featured
+                      </span>
+                    )}
+                  </div>
+
                   <div className="absolute right-4 top-4 grid h-14 w-14 place-items-center rounded-2xl bg-base/50 text-white ring-1 ring-inset ring-white/10 backdrop-blur-sm transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
                     <project.icon size={28} />
                   </div>

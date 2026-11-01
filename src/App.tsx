@@ -16,14 +16,14 @@ import { FloatingActions } from "./components/ui/FloatingActions";
 
 export default function App() {
   return (
-    <>
+    <div className="relative w-full max-w-full overflow-x-hidden">
       <Preloader />
       <Background />
       <CursorGlow />
       <ScrollProgress />
       <Navbar />
 
-      <main className="relative z-10">
+      <main className="relative z-10 w-full max-w-full overflow-hidden">
         <Hero />
         <Marquee />
         <About />
@@ -36,6 +36,6 @@ export default function App() {
 
       <Footer />
       <FloatingActions />
-    </>
+    </div>
   );
 }

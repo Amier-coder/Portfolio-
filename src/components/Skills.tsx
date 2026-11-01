@@ -16,17 +16,17 @@ export function Skills() {
       : skills.filter((s: Skill) => s.category === activeCategory);
 
   return (
-    <section id="skills" className="relative py-24 sm:py-28">
+    <section id="skills" className="relative py-20 sm:py-28 overflow-hidden">
       <div className="container-px">
         <SectionHeading
-          eyebrow="Tech Stack & Proficiency"
+          eyebrow="Tech Stack &amp; Proficiency"
           title="Tools I use to"
           highlight="build solutions"
           description="A production-ready stack for engineering responsive client interfaces, enterprise systems, and performant REST APIs."
         />
 
         {/* Category switcher */}
-        <div className="mt-10 flex flex-wrap justify-center gap-2">
+        <div className="mt-8 sm:mt-10 flex flex-wrap justify-center gap-1.5 sm:gap-2">
           {categories.map((category) => {
             const isActive = activeCategory === category;
             return (
@@ -34,7 +34,7 @@ export function Skills() {
                 key={category}
                 type="button"
                 onClick={() => setActiveCategory(category)}
-                className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                className={`relative rounded-full px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-medium transition-colors ${
                   isActive ? "text-white" : "text-slate-400 hover:text-white"
                 }`}
               >
@@ -53,7 +53,7 @@ export function Skills() {
 
         <motion.div
           layout
-          className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 sm:mt-12 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3"
         >
           <AnimatePresence mode="popLayout">
             {filteredSkills.map((skill) => (
@@ -63,31 +63,31 @@ export function Skills() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.35 }}
+                transition={{ duration: 0.3 }}
                 variants={staggerItem}
-                className="group glass card-hover rounded-2xl p-5"
+                className="group glass card-hover rounded-2xl p-4 sm:p-5"
               >
-                <div className="flex items-center gap-3.5">
+                <div className="flex items-center gap-3 sm:gap-3.5">
                   <span
-                    className="grid h-12 w-12 place-items-center rounded-xl bg-white/[0.04] ring-1 ring-inset ring-white/10 transition-transform duration-500 group-hover:scale-110"
+                    className="grid h-11 w-11 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-xl bg-white/[0.04] ring-1 ring-inset ring-white/10 transition-transform duration-500 group-hover:scale-110"
                     style={{ color: skill.color }}
                   >
-                    <skill.icon size={24} />
+                    <skill.icon size={22} />
                   </span>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-semibold text-white">{skill.name}</span>
-                      <span className="chip py-0 px-2 text-[10px] bg-white/[0.04] text-slate-400 border-white/5">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between gap-1">
+                      <span className="text-xs sm:text-sm font-semibold text-white truncate">{skill.name}</span>
+                      <span className="chip py-0 px-1.5 text-[9px] sm:text-[10px] bg-white/[0.04] text-slate-400 border-white/5 shrink-0">
                         {skill.category}
                       </span>
                     </div>
-                    <div className="mt-1 flex items-center justify-between">
-                      <span className="text-xs text-slate-400">Proficiency</span>
-                      <span className="font-mono text-xs font-semibold text-primary-300">
+                    <div className="mt-1 flex items-center justify-between text-[11px] sm:text-xs">
+                      <span className="text-slate-400">Proficiency</span>
+                      <span className="font-mono font-semibold text-primary-300">
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/[0.06]">
+                    <div className="mt-1.5 sm:mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/[0.06]">
                       <motion.div
                         className="h-full rounded-full bg-gradient-to-r from-primary-500 to-accent-400"
                         initial={{ width: 0 }}

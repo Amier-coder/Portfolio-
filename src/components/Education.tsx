@@ -8,44 +8,44 @@ import { staggerItem } from "../lib/motion";
 
 export function Education() {
   return (
-    <section id="education" className="relative py-24 sm:py-28">
+    <section id="education" className="relative py-20 sm:py-28 overflow-hidden">
       <div className="container-px">
         <SectionHeading
           eyebrow="Academic Background"
-          title="Education &"
+          title="Education &amp;"
           highlight="Languages"
           description="Formal academic qualifications, analytical training, and multilingual communication skills."
         />
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="mt-12 sm:mt-16 grid gap-8 lg:gap-10 lg:grid-cols-[1.2fr_0.8fr]">
           {/* Education column */}
-          <div className="space-y-6">
+          <div className="space-y-5 sm:space-y-6">
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary-300">
               <FaGraduationCap className="text-base" />
               Academic Credentials
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {educationList.map((edu, index) => (
                 <Reveal key={edu.degree} direction="up" delay={index * 0.1}>
-                  <div className="glass card-hover relative overflow-hidden rounded-3xl p-6 sm:p-7">
+                  <div className="glass card-hover relative overflow-hidden rounded-3xl p-5 sm:p-6 sm:p-7">
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                      <div className="flex items-start gap-3.5">
-                        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-primary-500/25 to-accent-500/20 text-primary-200 ring-1 ring-inset ring-white/10">
-                          <FiBookOpen size={20} />
+                      <div className="flex items-start gap-3 sm:gap-3.5 min-w-0">
+                        <span className="grid h-10 w-10 sm:h-11 sm:w-11 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-primary-500/25 to-accent-500/20 text-primary-200 ring-1 ring-inset ring-white/10">
+                          <FiBookOpen size={18} />
                         </span>
-                        <div>
-                          <h3 className="font-display text-lg font-bold text-white sm:text-xl">
+                        <div className="min-w-0">
+                          <h3 className="font-display text-base sm:text-lg lg:text-xl font-bold text-white break-words">
                             {edu.degree}
                           </h3>
-                          <p className="text-sm font-medium text-gradient">
+                          <p className="text-xs sm:text-sm font-medium text-gradient">
                             {edu.institution}
                           </p>
                         </div>
                       </div>
 
                       <span
-                        className={`chip self-start text-xs font-medium sm:self-auto ${
+                        className={`chip self-start text-[11px] sm:text-xs font-medium sm:self-auto shrink-0 ${
                           edu.status.toLowerCase().includes("progress")
                             ? "border-emerald-400/30 bg-emerald-400/10 text-emerald-300"
                             : "border-primary-400/30 bg-primary-500/10 text-primary-300"
@@ -59,14 +59,14 @@ export function Education() {
                       {edu.description}
                     </p>
 
-                    <div className="mt-5 space-y-2 border-t border-white/10 pt-4">
+                    <div className="mt-4 sm:mt-5 space-y-2 border-t border-white/10 pt-4">
                       {edu.highlights.map((item) => (
                         <div
                           key={item}
                           className="flex items-start gap-2.5 text-xs text-slate-400 sm:text-sm"
                         >
-                          <FiCheckCircle className="mt-0.5 shrink-0 text-accent-400" />
-                          <span>{item}</span>
+                          <FiCheckCircle className="mt-0.5 shrink-0 text-accent-400 text-xs sm:text-sm" />
+                          <span className="min-w-0">{item}</span>
                         </div>
                       ))}
                     </div>
@@ -77,29 +77,29 @@ export function Education() {
           </div>
 
           {/* Languages & Core Competencies column */}
-          <div className="space-y-6">
+          <div className="space-y-5 sm:space-y-6">
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent-400">
               <FaLanguage className="text-base" />
               Languages &amp; Communication
             </div>
 
-            <div className="space-y-5">
+            <div className="space-y-4 sm:space-y-5">
               {languages.map((lang, index) => (
                 <Reveal key={lang.name} direction="left" delay={index * 0.1}>
-                  <div className="glass card-hover rounded-3xl p-6">
+                  <div className="glass card-hover rounded-3xl p-5 sm:p-6">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <span className="grid h-10 w-10 place-items-center rounded-xl bg-white/[0.04] text-accent-400 ring-1 ring-inset ring-white/10">
+                      <div className="flex items-center gap-3 min-w-0">
+                        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/[0.04] text-accent-400 ring-1 ring-inset ring-white/10">
                           <FaLanguage size={20} />
                         </span>
-                        <div>
-                          <h4 className="font-display text-base font-semibold text-white">
+                        <div className="min-w-0">
+                          <h4 className="font-display text-sm sm:text-base font-semibold text-white truncate">
                             {lang.name}
                           </h4>
-                          <span className="text-xs text-primary-300">{lang.proficiency}</span>
+                          <span className="text-[11px] sm:text-xs text-primary-300">{lang.proficiency}</span>
                         </div>
                       </div>
-                      <span className="font-mono text-xs font-semibold text-slate-400">
+                      <span className="font-mono text-xs font-semibold text-slate-400 shrink-0">
                         {lang.level}%
                       </span>
                     </div>
@@ -108,7 +108,7 @@ export function Education() {
                       {lang.description}
                     </p>
 
-                    <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-white/[0.06]">
+                    <div className="mt-3 sm:mt-4 h-1.5 w-full overflow-hidden rounded-full bg-white/[0.06]">
                       <motion.div
                         className="h-full rounded-full bg-gradient-to-r from-primary-500 to-accent-400"
                         initial={{ width: 0 }}
@@ -123,12 +123,12 @@ export function Education() {
 
               {/* Professional Strengths Card */}
               <Reveal direction="up" delay={0.2}>
-                <div className="glass rounded-3xl p-6 border-white/10">
+                <div className="glass rounded-3xl p-5 sm:p-6 border-white/10">
                   <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary-300">
                     <FiAward className="text-base" />
                     Key Competencies
                   </div>
-                  <Stagger className="mt-4 flex flex-wrap gap-2" stagger={0.04}>
+                  <Stagger className="mt-3.5 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2" stagger={0.04}>
                     {[
                       "Role-Based Access Control (RBAC)",
                       "MySQL Schema & Query Optimization",
@@ -141,7 +141,7 @@ export function Education() {
                       <motion.span
                         key={badge}
                         variants={staggerItem}
-                        className="chip bg-white/[0.04] text-[11px] text-slate-300"
+                        className="chip bg-white/[0.04] text-[10px] sm:text-[11px] text-slate-300"
                       >
                         {badge}
                       </motion.span>

@@ -41,7 +41,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative py-24 sm:py-28">
+    <section id="contact" className="relative py-20 sm:py-28 overflow-hidden">
       <div className="container-px">
         <SectionHeading
           eyebrow="Contact"
@@ -50,20 +50,22 @@ export function Contact() {
           description="Have a project, a role, or just an idea? My inbox is always open."
         />
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mt-12 sm:mt-16 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] items-start">
           <Reveal direction="right">
-            <div className="flex h-full flex-col gap-5">
+            <div className="flex h-full flex-col gap-4 sm:gap-5">
               {infoItems.map((item) => {
                 const content = (
                   <>
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary-500/25 to-accent-500/20 text-primary-200 ring-1 ring-inset ring-white/10">
+                    <span className="grid h-10 w-10 sm:h-11 sm:w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary-500/25 to-accent-500/20 text-primary-200 ring-1 ring-inset ring-white/10">
                       <item.icon size={18} />
                     </span>
-                    <span>
-                      <span className="block text-xs uppercase tracking-wide text-slate-500">
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-[11px] sm:text-xs uppercase tracking-wide text-slate-500">
                         {item.label}
                       </span>
-                      <span className="block text-sm font-medium text-white">{item.value}</span>
+                      <span className="block text-xs sm:text-sm font-medium text-white break-all sm:break-normal">
+                        {item.value}
+                      </span>
                     </span>
                   </>
                 );
@@ -72,23 +74,23 @@ export function Contact() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="glass card-hover flex items-center gap-4 rounded-2xl p-5"
+                    className="glass card-hover flex items-center gap-3 sm:gap-4 rounded-2xl p-4 sm:p-5"
                   >
                     {content}
                   </a>
                 ) : (
                   <div
                     key={item.label}
-                    className="glass flex items-center gap-4 rounded-2xl p-5"
+                    className="glass flex items-center gap-3 sm:gap-4 rounded-2xl p-4 sm:p-5"
                   >
                     {content}
                   </div>
                 );
               })}
 
-              <div className="glass rounded-2xl p-5">
+              <div className="glass rounded-2xl p-4 sm:p-5">
                 <p className="text-xs uppercase tracking-wide text-slate-500">Find me online</p>
-                <div className="mt-3 flex gap-3">
+                <div className="mt-3 flex gap-2.5 sm:gap-3">
                   {socials.map((social) => (
                     <a
                       key={social.label}
@@ -96,7 +98,7 @@ export function Contact() {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={social.label}
-                      className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-primary-400/50 hover:text-white hover:shadow-glow"
+                      className="grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-primary-400/50 hover:text-white hover:shadow-glow"
                     >
                       <social.icon size={18} />
                     </a>
@@ -107,48 +109,48 @@ export function Contact() {
           </Reveal>
 
           <Reveal direction="left" delay={0.1}>
-            <form onSubmit={handleSubmit} className="glass rounded-3xl p-6 sm:p-8">
-              <div className="grid gap-5 sm:grid-cols-2">
+            <form onSubmit={handleSubmit} className="glass rounded-3xl p-5 sm:p-8">
+              <div className="grid gap-4 sm:gap-5 sm:grid-cols-2">
                 <label className="block">
-                  <span className="mb-2 block text-sm font-medium text-slate-300">Name</span>
+                  <span className="mb-2 block text-xs sm:text-sm font-medium text-slate-300">Name</span>
                   <input
                     required
                     type="text"
                     value={form.name}
                     onChange={handleChange("name")}
                     placeholder="Your name"
-                    className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-slate-500 outline-none transition focus:border-primary-400/60 focus:ring-2 focus:ring-primary-500/20"
+                    className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder:text-slate-500 outline-none transition focus:border-primary-400/60 focus:ring-2 focus:ring-primary-500/20"
                   />
                 </label>
                 <label className="block">
-                  <span className="mb-2 block text-sm font-medium text-slate-300">Email</span>
+                  <span className="mb-2 block text-xs sm:text-sm font-medium text-slate-300">Email</span>
                   <input
                     required
                     type="email"
                     value={form.email}
                     onChange={handleChange("email")}
                     placeholder="you@example.com"
-                    className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-slate-500 outline-none transition focus:border-primary-400/60 focus:ring-2 focus:ring-primary-500/20"
+                    className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder:text-slate-500 outline-none transition focus:border-primary-400/60 focus:ring-2 focus:ring-primary-500/20"
                   />
                 </label>
               </div>
 
-              <label className="mt-5 block">
-                <span className="mb-2 block text-sm font-medium text-slate-300">Message</span>
+              <label className="mt-4 sm:mt-5 block">
+                <span className="mb-2 block text-xs sm:text-sm font-medium text-slate-300">Message</span>
                 <textarea
                   required
-                  rows={6}
+                  rows={5}
                   value={form.message}
                   onChange={handleChange("message")}
-                  placeholder="Tell me about your project..."
-                  className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-slate-500 outline-none transition focus:border-primary-400/60 focus:ring-2 focus:ring-primary-500/20"
+                  placeholder="Tell me about your project or role..."
+                  className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.03] px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder:text-slate-500 outline-none transition focus:border-primary-400/60 focus:ring-2 focus:ring-primary-500/20"
                 />
               </label>
 
               <motion.button
                 type="submit"
                 whileTap={{ scale: 0.98 }}
-                className="btn-primary mt-6 w-full sm:w-auto"
+                className="btn-primary mt-5 sm:mt-6 w-full sm:w-auto"
               >
                 <FiSend />
                 Send Message
@@ -158,7 +160,7 @@ export function Contact() {
                 <motion.p
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 text-sm text-emerald-400"
+                  className="mt-4 text-xs sm:text-sm text-emerald-400"
                 >
                   Thanks! Your email client should open with the message ready to send.
                 </motion.p>
